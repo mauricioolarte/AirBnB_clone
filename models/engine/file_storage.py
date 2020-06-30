@@ -14,7 +14,7 @@ class FileStorage():
         methods:
             all, new, save, reload
     """
-    __file_path = "/home/vagrant/arbn_prev/file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
