@@ -7,6 +7,7 @@ This abstraction will also allow you to change the type of storage easily withou
 The console will be a tool to validate this storage engine.
 ## How to use it
 *Command* | *Usage* | *Example* | *Description*
+--- | --- | --- | ---
 help | help | help | Displays a list of the commands
 create | create <class> | create User | Creates a new instance of the class
 show | show <class> <id> | show User 123-123-123 | Shows a specific instance
