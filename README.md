@@ -51,6 +51,6 @@ $ echo "show User 36999f0d-c1b7-49ed-bd6b-2672e38ec725" | ./console.py
 $
 ```
 ## Setup
-Python 3\n
-Interpreted/compiled on Ubuntu 14.04 LTS\n
-Pep8 ver 1.7.1
++ Interpreter: Python 3
++ S.O: Interpreted/compiled on Ubuntu 14.04 LTS
++ Style: pep8 ver 1.7.1
