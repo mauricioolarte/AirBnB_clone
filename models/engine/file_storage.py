@@ -24,10 +24,9 @@ class FileStorage():
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
-        if type(obj) == 'dict':
-            key = obj.__class__.__name__ + '.' + obj.id
-            value = obj.to_dict()
-            self.__objects[key] = value
+        key = obj.__class__.__name__ + '.' + obj.id
+        value = obj.to_dict()
+        self.__objects[key] = value
         return self.__objects
 
     def save(self):
