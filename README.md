@@ -9,12 +9,12 @@ The console will be a tool to validate this storage engine.
 *Command* | *Usage* | *Example* | *Description*
 --- | --- | --- | ---
 help | help | help | Displays a list of the commands
-create | create <class> | create User | Creates a new instance of the class
-show | show <class> <id> | show User 123-123-123 | Shows a specific instance
-destroy | destroy <class> <id> | destroy User 123-123-123 | Destroy a specific instance
-all | all or all <class> | all User | Shows all the instances created
-update | update <class> <id> <attribute> <value> | update User 123-123-123 email 'email@mail' | Updates an instance attribute
-count | <class>.count | User.count | Counts the number of an instance
+create | create \<class\> | create User | Creates a new instance of the class
+show | show \<class\> \<id\> | show User 123-123-123 | Shows a specific instance
+destroy | destroy \<class\> \<id\> | destroy User 123-123-123 | Destroy a specific instance
+all | all or all \<class\> | all User | Shows all the instances created
+update | update \<class\> \<id\> \<attribute\> \<value\> | update User 123-123-123 email 'email@mail' | Updates an instance attribute
+count | \<class\>.count | User.count | Counts the number of an instance
 quit | quit | quit | Quits the console
 ## Examples
 ### Interactive mode
@@ -51,6 +51,6 @@ $ echo "show User 36999f0d-c1b7-49ed-bd6b-2672e38ec725" | ./console.py
 $
 ```
 ## Setup
-Python 3
-Interpreted/compiled on Ubuntu 14.04 LTS
+Python 3\n
+Interpreted/compiled on Ubuntu 14.04 LTS\n
 Pep8 ver 1.7.1
