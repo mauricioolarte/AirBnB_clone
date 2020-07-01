@@ -18,7 +18,13 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """Console to data engine of HBNB."""
+    """Console to data engine of HBNB.
+        console.py that contains the entry point of the command interpreter:
+        methods:
+            create, show, destroy
+        instances:
+            classes, prompt    
+    """
 
     prompt = '(hbnb) '
     classes = {
