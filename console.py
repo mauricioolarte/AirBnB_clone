@@ -23,7 +23,7 @@ class HBNBCommand(cmd.Cmd):
         methods:
             create, show, destroy
         instances:
-            classes, prompt
+            classes, prompt    
     """
 
     prompt = '(hbnb) '

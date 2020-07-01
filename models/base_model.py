@@ -24,7 +24,7 @@ class BaseModel():
     def __init__(self, *args, **kwargs):
         """ inicialia class """
         if kwargs:
-            for key in kwargs:
+            for key, value in kwargs.items():
                 if key == 'id':
                     self.id = kwargs[key]
                 elif key == 'created_at':
@@ -34,7 +34,8 @@ class BaseModel():
                     self.update_at = datetime.datetime.strptime(
                         kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
                 else:
-                    self.__dict__.update(kwargs)
+                    if key != '__class__':
+                        setattr(self, key, value)
         else:
             self.created_at = datetime.datetime.now()
             self.updated_at = datetime.datetime.now()
