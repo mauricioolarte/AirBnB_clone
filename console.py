@@ -213,6 +213,8 @@ class HBNBCommand(cmd.Cmd):
             # for obj in list_obj.keys():
             if key in list_obj.keys():
                 del list_obj[key]
+            else:
+                print("** no instance found **")
         else:
             return cmd.Cmd.default(self, line)
 

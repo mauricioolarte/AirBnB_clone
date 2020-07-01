@@ -34,6 +34,20 @@ class Test_BaseModel(unittest.TestCase):
     def test_function(self):
         self.assertTrue(True)
     """ my test """
+    def test_typeof_create(self):
+        my_model = BaseModel()
+        a = my_model.created_at
+        self.assertEqual(type(a), datetime.datetime)
+
+    def test_typeof_update(self):
+        my_model = BaseModel()
+        a = my_model.updated_at
+        self.assertEqual(type(a), datetime.datetime)
+
+    def test_typeof_id(self):
+        my_model = BaseModel()
+        a = my_model.id
+        self.assertEqual(type(a), str)
 
     def test_id_creation(self):
         my_model1 = BaseModel()
