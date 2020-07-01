@@ -44,9 +44,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, line):
         """Quit command to exit the program """
-        return True
-    
+        quit()
+
     def emptyline(self):
+        """Clean the command-line"""
         return
 
     def do_create(self, arg):
@@ -169,8 +170,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
 if __name__ == '__main__':
-    import sys
-    if len(sys.argv) > 1:
-        HBNBCommand().onecmd(' '.join(sys.argv[1:]))
-    else:
-        HBNBCommand().cmdloop()
+    # import sys
+    # if len(sys.argv) > 1:
+    #     HBNBCommand().onecmd(' '.join(sys.argv[1:]))
+    # else:
+    HBNBCommand().cmdloop()
