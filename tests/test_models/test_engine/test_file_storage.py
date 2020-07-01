@@ -35,6 +35,12 @@ class Test_BaseModel(unittest.TestCase):
         self.assertTrue(True)
     """ my test """
 
+    def test_return_method_all(self):
+        myfilestorage = FileStorage()
+        a = myfilestorage.all()
+        b = str(type(a))
+        self.assertEqual(b, "<class 'dict'>")
+
     def test_dict(self):
         self.name = "holberton"
         self.assertEqual("holberton", self.name)
