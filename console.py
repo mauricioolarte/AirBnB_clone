@@ -23,7 +23,7 @@ class HBNBCommand(cmd.Cmd):
         methods:
             create, show, destroy
         instances:
-            classes, prompt    
+            classes, prompt
     """
 
     prompt = '(hbnb) '
@@ -173,7 +173,8 @@ class HBNBCommand(cmd.Cmd):
         advance_commad = re.split('[.()"]', line)
         # print(advance_commad)
         list_instances = []
-        if advance_commad[0] in self.classes.keys() and advance_commad[1] == 'all':
+        if advance_commad[0] in self.classes.keys() and
+        advance_commad[1] == 'all':
             list_obj = storage.all()
             for obj in list_obj.keys():
                 obj_class = list_obj[obj]
@@ -181,7 +182,8 @@ class HBNBCommand(cmd.Cmd):
                     new_class = self.classes[advance_commad[0]](**obj_class)
                     list_instances.append(str(new_class))
             print(list_instances)
-        elif advance_commad[0] in self.classes.keys() and advance_commad[1] == 'count':
+        elif advance_commad[0] in self.classes.keys() and
+        advance_commad[1] == 'count':
             count_instances = 0
             list_obj = storage.all()
             for obj in list_obj.keys():
@@ -189,13 +191,14 @@ class HBNBCommand(cmd.Cmd):
                 if obj_class['__class__'] == advance_commad[0]:
                     count_instances += 1
             print(count_instances)
-        elif advance_commad[0] in self.classes.keys() and advance_commad[1] == 'show':
+        elif advance_commad[0] in self.classes.keys() and
+        advance_commad[1] == 'show':
             list_obj = storage.all()
             id_counter = 0
             key = advance_commad[0] + '.' + advance_commad[3]
             for obj in list_obj.keys():
                 if key == obj:
-                    obj_class = list_obj[obj] 
+                    obj_class = list_obj[obj]
                     new_class = self.classes[advance_commad[0]](**obj_class)
                     list_instances.append(str(new_class))
                     id_counter += 1
@@ -203,14 +206,16 @@ class HBNBCommand(cmd.Cmd):
                 print(list_instances)
             else:
                 print("** no instance found **")
-        elif advance_commad[0] in self.classes.keys() and advance_commad[1] == 'destroy':
+        elif advance_commad[0] in self.classes.keys() and
+        advance_commad[1] == 'destroy':
             list_obj = storage.all()
             key = advance_commad[0] + '.' + advance_commad[3]
-            for obj in list_obj.keys():
-                if key == obj:
-                    del list_obj[key]
-        else:   
+            # for obj in list_obj.keys():
+            if key in list_obj.keys():
+                del list_obj[key]
+        else:
             return cmd.Cmd.default(self, line)
+
 if __name__ == '__main__':
     # import sys
     # if len(sys.argv) > 1:
