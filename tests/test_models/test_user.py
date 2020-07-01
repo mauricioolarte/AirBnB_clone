@@ -19,52 +19,65 @@ class Test_BaseModel(unittest.TestCase):
 
     @classmethod
     def test_setUpClass(self):
+        """this tests methods"""
         print("Base setUpClass")
 
     @classmethod
     def test_tearDownClass(self):
+        """this tests methods"""
         print("base tearDownClass")
 
     def test_setUp(self):
+        """this tests methods"""
         print("base setUp")
 
     def test_tearDown(self):
+        """this tests methods"""
         print("base tearDown")
 
     def test_funtion(self):
+        """this tests methods"""
         self.assertTrue(True)
     """ my test """
 
     def test_email(self):
+        """this tests methods"""
         self.email = "mauricio@gmail"
         self.assertEqual("mauricio@gmail", self.email)
 
     def test_first_name(self):
+        """this tests methods"""
         self.first_name = "mauricio"
         self.assertEqual("mauricio", self.first_name)
 
     def test_last_name(self):
+        """this tests methods"""
         self.last_name = "ramir"
         self.assertEqual("ramir", self.last_name)
 
     def test_password(self):
+        """this tests methods"""
         self.password = "b6a6e15c-c67d-4312-9a75-9d084935e579"
         self.assertEqual("b6a6e15c-c67d-4312-9a75-9d084935e579", self.password)
 
     def test_name(self):
+        """this tests methods"""
         self.name = "holberton"
         self.assertEqual("holberton", self.name)
 
     def test_id(self):
+        """this tests methods"""
         self.id = "b6a6e15c-c67d-4312-9a75-9d084935e579"
         self.assertEqual("b6a6e15c-c67d-4312-9a75-9d084935e579", self.id)
 
     def test_created_at(self):
+        """this tests methods"""
         self.created_at = datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)
         self.assertEqual(datetime.datetime(
             2017, 9, 28, 21, 5, 54, 119427), self.created_at)
 
     def test_updated_at(self):
+        """this tests methods"""
         self.updated_at = datetime.datetime(2017, 9, 28, 21, 5, 54, 119434)
         self.assertEqual(datetime.datetime(
             2017, 9, 28, 21, 5, 54, 119434), self.updated_at)
