@@ -31,9 +31,36 @@ class Test_BaseModel(unittest.TestCase):
     def test_tearDown(self):
         print("base tearDown")
 
-    def test_funtion(self):
+    def test_function(self):
         self.assertTrue(True)
     """ my test """
+
+    def test_id_creation(self):
+        my_model1 = BaseModel()
+        a = my_model1.id
+        my_model2 = BaseModel()
+        b = my_model2.id
+        self.assertNotEqual(a, b)
+
+    def test_return_to_dict(self):
+        my_model = BaseModel()
+        b = my_model.to_dict()
+        a = str(type(b))
+        self.assertEqual(a, "<class 'dict'>")
+
+    def test_actualize_update_at(self):
+        my_model = BaseModel()
+        a = my_model.updated_at
+        my_model.save()
+        b = my_model.updated_at
+        self.assertNotEqual(a, b)
+
+    def test_actualize_create_at(self):
+        my_model = BaseModel()
+        a = my_model.created_at
+        my_model.save()
+        b = my_model.created_at
+        self.assertEqual(a, b)
 
     def test_dict(self):
         self.name = "holberton"
