@@ -19,16 +19,20 @@ class Test_BaseModel(unittest.TestCase):
 
     @classmethod
     def test_setUpClass(self):
+        """test if is"""
         print("Base setUpClass")
 
     @classmethod
     def test_tearDownClass(self):
+        """test if is"""
         print("base tearDownClass")
 
     def test_setUp(self):
+        """test if is"""
         print("base setUp")
 
     def test_tearDown(self):
+        """test if is"""
         print("base tearDown")
 
     def test_funtion(self):
@@ -36,25 +40,30 @@ class Test_BaseModel(unittest.TestCase):
     """ my test """
 
     def test_return_method_all(self):
+        """test if is a dict"""
         myfilestorage = FileStorage()
         a = myfilestorage.all()
         b = str(type(a))
         self.assertEqual(b, "<class 'dict'>")
 
     def test_dict(self):
+        """test if is"""
         self.name = "holberton"
         self.assertEqual("holberton", self.name)
 
     def test_id(self):
+        """test if is"""
         self.id = "b6a6e15c-c67d-4312-9a75-9d084935e579"
         self.assertEqual("b6a6e15c-c67d-4312-9a75-9d084935e579", self.id)
 
     def test_created_at(self):
+        """test if is"""
         self.created_at = datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)
         self.assertEqual(datetime.datetime(
             2017, 9, 28, 21, 5, 54, 119427), self.created_at)
 
     def test_updated_at(self):
+        """test if is"""
         self.updated_at = datetime.datetime(2017, 9, 28, 21, 5, 54, 119434)
         self.assertEqual(datetime.datetime(
             2017, 9, 28, 21, 5, 54, 119434), self.updated_at)

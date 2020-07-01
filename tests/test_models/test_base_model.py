@@ -19,37 +19,52 @@ class Test_BaseModel(unittest.TestCase):
 
     @classmethod
     def test_setUpClass(self):
+        """this tests methods"""
         print("Base setUpClass")
 
     @classmethod
     def test_tearDownClass(self):
+        """this tests methods"""
         print("base tearDownClass")
 
     def test_setUp(self):
+        """this tests methods"""
         print("base setUp")
 
     def test_tearDown(self):
+        """this tests methods"""
         print("base tearDown")
 
     def test_function(self):
+        """this tests methods"""
         self.assertTrue(True)
     """ my test """
+    def test_class(self):
+        """this tests methods"""
+        mymodel = BaseModel()
+        a = mymodel.__class__.__name__
+        self.assertEqual(a, "BaseModel")
+    
     def test_typeof_create(self):
+        """this tests methods"""
         my_model = BaseModel()
         a = my_model.created_at
         self.assertEqual(type(a), datetime.datetime)
 
     def test_typeof_update(self):
+        """this tests methods"""
         my_model = BaseModel()
         a = my_model.updated_at
         self.assertEqual(type(a), datetime.datetime)
 
     def test_typeof_id(self):
+        """this tests methods"""
         my_model = BaseModel()
         a = my_model.id
         self.assertEqual(type(a), str)
 
     def test_id_creation(self):
+        """this tests methods"""
         my_model1 = BaseModel()
         a = my_model1.id
         my_model2 = BaseModel()
@@ -57,19 +72,26 @@ class Test_BaseModel(unittest.TestCase):
         self.assertNotEqual(a, b)
 
     def test_return_to_dict(self):
+        """this tests methods"""
         my_model = BaseModel()
         b = my_model.to_dict()
-        a = str(type(b))
-        self.assertEqual(a, "<class 'dict'>")
+        self.assertEqual(type(b), dict)
 
     def test_actualize_update_at(self):
+        """this tests methods"""
         my_model = BaseModel()
         a = my_model.updated_at
         my_model.save()
         b = my_model.updated_at
         self.assertNotEqual(a, b)
 
+    def test_str(self):
+        """this tests methods"""
+        my_model = BaseModel()
+        self.assertIsInstance(my_model.__str__(), str)
+
     def test_actualize_create_at(self):
+        """this tests methods"""
         my_model = BaseModel()
         a = my_model.created_at
         my_model.save()
@@ -77,19 +99,23 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_dict(self):
+        """this tests methods"""
         self.name = "holberton"
         self.assertEqual("holberton", self.name)
 
     def test_id(self):
+        """this tests methods"""
         self.id = "b6a6e15c-c67d-4312-9a75-9d084935e579"
         self.assertEqual("b6a6e15c-c67d-4312-9a75-9d084935e579", self.id)
 
     def test_created_at(self):
+        """this tests methods"""
         self.created_at = datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)
         self.assertEqual(datetime.datetime(
             2017, 9, 28, 21, 5, 54, 119427), self.created_at)
 
     def test_updated_at(self):
+        """this tests methods"""
         self.updated_at = datetime.datetime(2017, 9, 28, 21, 5, 54, 119434)
         self.assertEqual(datetime.datetime(
             2017, 9, 28, 21, 5, 54, 119434), self.updated_at)
