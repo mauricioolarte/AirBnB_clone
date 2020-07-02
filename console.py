@@ -159,7 +159,7 @@ class HBNBCommand(cmd.Cmd):
                 if obj:
                     arg = shlex.split(line)
                     if len(arg) < 3:
-                        print("** attribute name mising **")
+                        print("** attribute name missing **")
                     elif len(arg) < 4:
                         print("** value missing **")
                     elif arg[2] not in base:
