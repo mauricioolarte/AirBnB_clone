@@ -212,6 +212,7 @@ class HBNBCommand(cmd.Cmd):
             # for obj in list_obj.keys():
             if key in list_obj.keys():
                 del list_obj[key]
+                storage.save()
             else:
                 print("** no instance found **")
         else:

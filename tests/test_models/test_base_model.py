@@ -76,8 +76,9 @@ class Test_BaseModel(unittest.TestCase):
         my_model = BaseModel()
         b = my_model.to_dict()
         self.assertEqual(type(b), dict)
-    
+
     def test_to_dict(self):
+        """this tests methods"""
         mymodel = BaseModel()
         a = mymodel.to_dict()
         b = {}
@@ -97,10 +98,15 @@ class Test_BaseModel(unittest.TestCase):
         b = my_model.updated_at
         self.assertNotEqual(a, b)
 
-    def test_str(self):
+    def test_save(self):
         """this tests methods"""
         my_model = BaseModel()
-        self.assertIsInstance(my_model.__str__(), str)
+        self.assertNotEqual(my_model.updated_at, datetime.datetime.utcnow())
+
+    def test_str(self):
+        """this tests methods"""
+        my_model = BaseModel
+        self.assertIsInstance(my_model.__str__(self), str)
 
     def test_actualize_create_at(self):
         """this tests methods"""
