@@ -164,7 +164,6 @@ class HBNBCommand(cmd.Cmd):
                         print("** value missing **")
                     elif arg[2] not in base:
                         obj[arg[2]] = arg[3]
-                        # obj["updated_at"] = datetime.now()
                         storage.save()
         else:
             print("** class doesn't exist **")
