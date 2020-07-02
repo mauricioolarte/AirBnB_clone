@@ -76,6 +76,18 @@ class Test_BaseModel(unittest.TestCase):
         my_model = BaseModel()
         b = my_model.to_dict()
         self.assertEqual(type(b), dict)
+    
+    def test_to_dict(self):
+        mymodel = BaseModel()
+        a = mymodel.to_dict()
+        b = {}
+        for key, value in mymodel.__dict__.items():
+            b[key] = value
+        b['__class__'] = mymodel.__class__.__name__
+        b['id'] = mymodel.id
+        b['created_at'] = mymodel.created_at.isoformat()
+        b['updated_at'] = mymodel.updated_at.isoformat()
+        self.assertDictEqual(a, b)
 
     def test_actualize_update_at(self):
         """this tests methods"""
