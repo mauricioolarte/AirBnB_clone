@@ -44,7 +44,7 @@ class Test_BaseModel(unittest.TestCase):
         mymodel = BaseModel()
         a = mymodel.__class__.__name__
         self.assertEqual(a, "BaseModel")
-    
+
     def test_typeof_create(self):
         """this tests methods"""
         my_model = BaseModel()
