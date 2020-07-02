@@ -9,6 +9,14 @@ import unittest
 from models.engine.file_storage import FileStorage
 import datetime
 import pep8
+import os
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class Test_BaseModel(unittest.TestCase):
@@ -40,6 +48,42 @@ class Test_BaseModel(unittest.TestCase):
         a = myfilestorage.all()
         b = str(type(a))
         self.assertEqual(b, "<class 'dict'>")
+
+    def test_new(self):
+        nstorage = FileStorage()
+        dic = nstorage.all()
+        rev = User()
+        rev.id = 123123
+        rev.name = "Holberton"
+        nstorage.new(rev)
+        key = rev.__class__.__name__ + "." + str(rev.id)
+        self.assertIsNotNone(dic[key])
+
+    def test_reload(self):
+        storage = FileStorage()
+        storage.save()
+        path = os.path.dirname(os.path.abspath("console.py"))
+        pt = os.path.join(path, "file.json")
+        with open(pt, 'r') as fi:
+            line = fi.readlines()
+        try:
+            os.remove(pt)
+        except BaseException:
+            pass
+        storage.save()
+        with open(pt, 'r') as fi:
+            line2 = fi.readlines()
+        self.assertEqual(line, line2)
+        try:
+            os.remove(pt)
+        except BaseException:
+            pass
+        with open(pt, "w") as fi:
+            fi.write("{}")
+        with open(pt, "r") as r:
+            for line in r:
+                self.assertEqual(line, "{}")
+        self.assertIsNotNone(storage.reload(), None)
 
     def test_dict(self):
         self.name = "holberton"
