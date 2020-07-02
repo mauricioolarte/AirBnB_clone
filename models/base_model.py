@@ -8,9 +8,8 @@
 
 import time
 import uuid
-import datetime
+from datetime import datetime
 from models import storage
-import json
 
 
 class BaseModel():
@@ -28,30 +27,31 @@ class BaseModel():
                 if key == 'id':
                     self.id = kwargs[key]
                 elif key == 'created_at':
-                    self.created_at = datetime.datetime.strptime(
+                    self.created_at = datetime.strptime(
                         kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
                 elif key == 'updated_at':
-                    self.update_at = datetime.datetime.strptime(
+                    self.update_at = datetime.strptime(
                         kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
                 else:
                     if key != '__class__':
                         setattr(self, key, value)
         else:
-            self.created_at = datetime.datetime.now()
-            self.updated_at = datetime.datetime.now()
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
             self.id = str(uuid.uuid4())
-            storage.new(self)
+            #storage.new(self)
 
     def __str__(self):
         """ print [<class name>] (<self.id>) <self.__dict__> """
         return ('[{}] ({}) {}'.format(
-            self.__class__.__name__, self.id, self.__dict__))
+            str(type(self).__name__), self.id, self.__dict__))
 
     def save(self):
         """updates the public instance attribute updated_at
              with the current datetime
         """
-        self.updated_at = datetime.datetime.now()
+        self.updated_at = datetime.now()
+        storage.new(self)
         storage.save()
 
     def to_dict(self):
