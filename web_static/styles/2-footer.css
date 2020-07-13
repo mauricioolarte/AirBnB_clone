@@ -1,0 +1,12 @@
+footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    background-color: #00ff00;
+    height: 60px;width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Circular,Helvetica,Arial,sans-serif;
+    }
